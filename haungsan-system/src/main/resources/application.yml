@@ -1,0 +1,35 @@
+server:
+  port: 52109
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:52199/eureka
+spring:
+  application:
+    name: hs-system
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/hs_cloud?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:8080
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: cn.hs.*.pojo.**
+  global-config:
+    db-config:
+      column-like: true
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: http://localhost:52188/oauth/token_key
+    client:
+      client-id: hs-system #客户端id
+      client-secret: 123456 #客户端口令

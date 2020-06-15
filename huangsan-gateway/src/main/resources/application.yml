@@ -1,0 +1,40 @@
+server:
+  port: 52100
+#  servlet:
+#    context-path: /zuul
+spring:
+  application:
+    name: hs-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:52199/eureka
+zuul:
+  routes:
+    token: #认证授权
+      path: /token/**
+      serviceId: hs-auth
+    back: #后台部分
+      path: /back/**
+      serviceId: hs-modules-back
+    sys: #后台部分
+      path: /sys/**
+      serviceId: hs-system
+    portal: #门户部分
+      path: /portal/**
+      serviceId: hs-modules-portal
+    api: #接口部分
+      path: /api/**
+      serviceId: hs-modules-api
+  sensitive-headers:
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: http://localhost:52188/oauth/token_key
+    client:
+      client-id: hs-gateway
+      client-secret: 123456
+#      access-token-uri: http://localhost:52188/oauth/token #令牌端点
+#      user-authorization-uri: http://localhost:52188/oauth/authorize #授权端点

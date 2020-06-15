@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hs.system.dao.SysUserDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="cn.hs.system.entity.SysUserEntity" id="sysUserMap">
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="userPassword" column="user_password"/>
+        <result property="realName" column="real_name"/>
+        <result property="userStatus" column="user_status"/>
+        <result property="userDesc" column="user_desc"/>
+        <result property="userTelephone" column="user_telephone"/>
+        <result property="userMobile" column="user_mobile"/>
+        <result property="userEmail" column="user_email"/>
+        <result property="userRemark" column="user_remark"/>
+        <result property="passwordResetTime" column="password_reset_time"/>
+        <result property="createUser" column="create_user"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateUser" column="update_user"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

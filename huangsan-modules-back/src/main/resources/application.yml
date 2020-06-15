@@ -1,0 +1,27 @@
+server:
+  port: 52110
+spring:
+  application:
+    name: hs-modules-back
+  datasource:
+    url: jdbc:mysql://localhost:3306/hs_cloud?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:52199/eureka
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: http://localhost:52188/oauth/token_key
+    client:
+      client-id: hs-modules-back
+      client-secret: 123456
