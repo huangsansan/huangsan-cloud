@@ -22,7 +22,7 @@
         <mysql>8.0.16</mysql>
         <mysql-druid>1.1.14</mysql-druid>
         <mybatis-plus-starter>3.1.0</mybatis-plus-starter>
-        <fastjson>1.2.68</fastjson>
+        <fastjson>1.2.83</fastjson>
     </properties>
 
     <dependencies>
