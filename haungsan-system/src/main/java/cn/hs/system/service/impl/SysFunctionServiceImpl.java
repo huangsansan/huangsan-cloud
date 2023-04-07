@@ -11,4 +11,8 @@ import org.springframework.stereotype.Service;
 public class SysFunctionServiceImpl extends ServiceImpl<SysFunctionDao, SysFunctionEntity> implements SysFunctionService {
 
 
+    @Override
+    public void doSome() {
+        System.out.println(1111);
+    }
 }

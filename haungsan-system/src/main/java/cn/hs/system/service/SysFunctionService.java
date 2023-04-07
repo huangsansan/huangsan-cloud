@@ -11,5 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @date 2020-05-23 16:26:24
  */
 public interface SysFunctionService extends IService<SysFunctionEntity> {
+
+    void doSome();
 }
 
